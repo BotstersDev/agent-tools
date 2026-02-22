@@ -1,0 +1,40 @@
+{
+  "name": "@botstersdev/agent-tools",
+  "version": "1.0.0",
+  "description": "CLI tools for SEKS broker: agent-http, agent-git, listagent",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "agent-http": "dist/src/cli/agent-http.js",
+    "agent-git": "dist/src/cli/agent-git.js",
+    "listagent": "dist/src/cli/listagent.js",
+    "do-agent": "dist/src/cli/do-agent.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test dist/tests/*.test.js",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "dependencies": {
+    "@botstersdev/broker-client": "file:../seks-broker-client"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "BotstersDev Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BotstersDev/agent-tools"
+  }
+}
